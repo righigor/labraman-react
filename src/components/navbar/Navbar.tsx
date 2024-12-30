@@ -24,7 +24,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="flex justify-between items-center py-4 px-6 h-16 md:h-20 lg:h-20 bg-slate-500 font-title">
+    <header className="flex justify-between items-center py-4 px-6 h-16 md:h-20 lg:h-20 bg-black font-title">
       <Link to="/" className="flex items-center">
         <img src={logo} alt="Logo LabRaman" className="h-14" />
       </Link>

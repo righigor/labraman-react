@@ -14,6 +14,8 @@ i18n
           "equipamentos": "Equipamentos",
           "artigos": "Artigos",
           "contato": "Contato",
+          "saiba_mais": "Saiba Mais",
+          "lab_raman": "Laboratório de Espectroscopia Raman da UFMG",
         }
       },
       en: {
@@ -23,6 +25,8 @@ i18n
           "equipamentos": "Equipment",
           "artigos": "Articles",
           "contato": "Contact",
+          "saiba_mais": "Learn More",
+          "lab_raman": "Raman Spectroscopy Laboratory of UFMG",
         }
       },
     },

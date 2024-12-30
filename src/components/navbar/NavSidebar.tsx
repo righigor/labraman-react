@@ -12,7 +12,7 @@ export default function NavSideBar({ handleClick, isOpen }: SideMenuProps) {
   const { t } = useTranslation();
   return (
     <div
-      className={ `fixed top-16 right-0 h-full bg-slate-500 text-white p-5 w-64 transition-transform duration-700 ease-in-out transform z-10 ${
+      className={ `fixed md:hidden top-16 right-0 h-full bg-black text-text p-5 w-80 transition-transform duration-700 ease-in-out transform z-10 shadow-[-4px_0_0_0_rgba(0,0,0,0.1)] ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }` }
     >

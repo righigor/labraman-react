@@ -9,33 +9,33 @@ export default function NavList() {
 
   return (
     <nav>
-      <ul className="hidden md:flex items-center space-x-8">
+      <ul className="hidden md:flex items-center space-x-8 text-text">
         <li className="group relative">
-          <Link to="/nossa-historia" className="text-white">
+          <Link to="/nossa-historia">
             {t('nossa_historia')}
           </Link>
           <Sublinhado />
         </li>
         <li className="group relative">
-          <Link to="/equipe" className="text-white">
+          <Link to="/equipe">
             {t('equipe')}
           </Link>
           <Sublinhado />
         </li>
         <li className="group relative">
-          <Link to="/equipamentos" className="text-white">
+          <Link to="/equipamentos">
             {t('equipamentos')}
           </Link>
           <Sublinhado />
         </li>
         <li className="group relative">
-          <Link to="/artigos" className="text-white">
+          <Link to="/artigos">
             {t('artigos')}
           </Link>
           <Sublinhado />
         </li>
         <li className="group relative">
-          <Link to="/contato" className="text-white">
+          <Link to="/contato">
             {t('contato')}
           </Link>
           <Sublinhado />
