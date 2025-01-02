@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
-import HeroIcon from './components/heroIcon/HeroIcon'
 import HistoriaPage from './components/historia/historiaPage'
+import HomePage from './components/homePage/HomePage'
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={ <HeroIcon /> } />
+        <Route path="/" element={ <HomePage /> } />
         <Route path="nossa-historia" element={ <HistoriaPage /> } />
       </Routes>
     </Router>

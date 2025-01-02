@@ -20,7 +20,7 @@ export default {
         danger: '#FF4C4C',
       },
       backgroundImage: {
-        'hero-pattern': "url('/src/assets/3D Paths - Lines 1 - Copy@1-1366x608.jpg')",
+        'hero': "url('./assets/hero-icon-img.jpg')",
       },
     },
   },
