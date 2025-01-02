@@ -1,10 +1,17 @@
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './components/navbar/Navbar'
+import HistoriaPage from './components/historia/historiaPage'
+import HomePage from './components/homePage/HomePage'
 
 function App() {
   return (
-    <div>
-      <h1 className='text-red-600'>test</h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={ <HomePage /> } />
+        <Route path="nossa-historia" element={ <HistoriaPage /> } />
+      </Routes>
+    </Router>
   )
 }
 
