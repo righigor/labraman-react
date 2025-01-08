@@ -8,7 +8,7 @@ export default function HeroIcon() {
   <div className="absolute inset-0 bg-cover bg-center"></div>
   <div className="absolute bottom-0 left-0 w-full h-36 bg-gradient-to-b from-transparent to-black"></div>
   <motion.div
-    className="absolute top-1/4 mx-6 md:w-1/2 md:left-[40%] lg:w-1/3 lg:top-[45%] lg:left-[60%] transform bg-background p-8 rounded"
+    className="absolute top-1/4 mx-6 md:w-1/2 md:left-[40%] lg:w-1/3 lg:top-[45%] lg:left-[60%] transform bg-backgroundLight p-8 rounded"
     initial={{ opacity: 0, x: 0, y: 100 }}
     animate={{ opacity: 1, x: 0, y: 0 }}
     transition={{ duration: 1 }}
