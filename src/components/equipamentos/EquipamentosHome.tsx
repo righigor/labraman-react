@@ -1,9 +1,33 @@
+import useAnimationScroll from "../../hooks/useAnimationScroll";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
+const list = [
+  {
+    nome: "Microscópio Raman",
+    descricao:
+      "Ideal para análise espectroscópica de amostras sólidas e líquidas.",
+    imagem: "https://via.placeholder.com/300",
+  },
+  {
+    nome: "Laser de Alta Precisão",
+    descricao: "Utilizado em experimentos de alta sensibilidade.",
+    imagem: "https://via.placeholder.com/300",
+  },
+  {
+    nome: "Espectrômetro de Massa",
+    descricao: "Equipamento para análise quantitativa e qualitativa.",
+    imagem: "https://via.placeholder.com/300",
+  },
+];
+
 export default function EquipamentosHome() {
   const { t } = useTranslation();
+  const isVisible = useAnimationScroll({
+    selector: "#my-cards",
+    threshold: 0.4,
+  });
   return (
     <section className="flex flex-col items-center justify-center h-screen w-full bg-black">
       <div className="w-full py-12">
@@ -16,35 +40,20 @@ export default function EquipamentosHome() {
             {t("equipamentos_home")}
           </p>
 
-          {/* Grid de Equipamentos */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Exemplo de Cartão de Equipamento */}
-            {[
-              {
-                nome: "Microscópio Raman",
-                descricao:
-                  "Ideal para análise espectroscópica de amostras sólidas e líquidas.",
-                imagem: "https://via.placeholder.com/300", // Substituir pela URL real
-              },
-              {
-                nome: "Laser de Alta Precisão",
-                descricao: "Utilizado em experimentos de alta sensibilidade.",
-                imagem: "https://via.placeholder.com/300",
-              },
-              {
-                nome: "Espectrômetro de Massa",
-                descricao:
-                  "Equipamento para análise quantitativa e qualitativa.",
-                imagem: "https://via.placeholder.com/300",
-              },
-            ].map((equipamento, index) => (
+            {list.map((equipamento, index) => (
               <motion.div
+                layout
+                id="my-cards"
                 key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                className="bg-backgroundLight rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform"
+                initial={{ opacity: 0, y: 100 + index * 100 }}
+                animate={
+                  isVisible
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 100 + index * 50 }
+                }
+                transition={{ duration: 2 + index * 0.5 }}
               >
                 <img
                   src={equipamento.imagem}

@@ -1,16 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HistoriaPage from "./components/historia/historiaPage";
-import HomePage from "./components/homePage/HomePage";
+import HomePage from "./pages/home/HomePage";
 import Layout from "./components/layout/Layout";
-import NotFound from "./components/not-found/NotFound";
+import NotFound from "./pages/not-found/NotFound";
+import EquipePage from "./pages/equipe/EquipePage";
+import { ScrollToTop } from "./utils/scrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="nossa-historia" element={<HistoriaPage />} />
+          <Route path="/equipe" element={<EquipePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         

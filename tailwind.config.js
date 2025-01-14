@@ -32,6 +32,7 @@ export default {
   			},
   			backgroundLight: '#F4F4F4',
   			text: '#f4f4f4',
+				textDark: '#1A1A1A',
   			purple: '#6A0DAD',
   			danger: '#FF4C4C',
   			background: 'hsl(var(--background))',

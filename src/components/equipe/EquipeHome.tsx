@@ -3,6 +3,7 @@ import { AnimatedTestimonials } from "../ui/animated-testimonials";
 
 export default function EquipeHome() {
   const { t } = useTranslation();
+
   const testimonials = [
     {
       quote:
@@ -46,6 +47,7 @@ export default function EquipeHome() {
         {t("nossa_equipe")}
         <span className="absolute left-1/2 -bottom-2 transform -translate-x-1/2 h-1 w-16 bg-gradient-to-r from-blue-500 to-red-500 rounded"></span>
       </h2>
+
       <AnimatedTestimonials testimonials={testimonials} />
     </section>
   );

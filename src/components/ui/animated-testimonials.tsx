@@ -43,7 +43,9 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
+    <div
+      className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20"
+    >
       <div className="relative grid grid-cols-1 md:grid-cols-2  gap-20">
         <div>
           <div className="relative h-80 w-full">
@@ -159,13 +161,13 @@ export const AnimatedTestimonials = ({
               <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
             </button>
             <div className="text-center">
-            <Link
-              to="/equipamentos"
-              className="px-8 py-3 border text-text text-lg font-medium rounded shadow hover:opacity-90 transition hover:bg-gray-200 hover:text-black ease-in-out duration-300"
-            >
-              {t("nossa_equipe_completa")}
-            </Link>
-          </div>
+              <Link
+                to="/equipamentos"
+                className="px-8 py-3 border text-text text-lg font-medium rounded shadow hover:opacity-90 transition hover:bg-gray-200 hover:text-black ease-in-out duration-300"
+              >
+                {t("nossa_equipe_completa")}
+              </Link>
+            </div>
           </div>
         </div>
       </div>
