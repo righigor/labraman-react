@@ -1,7 +1,8 @@
-import { Loader2 } from "lucide-react";
+// import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Swal from "sweetalert2";
+import sendEmail from '@/assets/icons/send-email.gif';
 
 interface IDataForm {
   name: string;
@@ -146,7 +147,7 @@ export default function FormContato() {
           type="submit"
           className="w-full py-2 bg-gradient-to-r from-blue-500 to-red-500 text-text font-bold rounded hover:opacity-90 transition flex justify-center items-center"
         >
-          {loading ? <Loader2 className="size-6 animate-spin" /> : t("enviar")}
+          {loading ? <img src={sendEmail} alt="" className="size-10" /> : t("enviar")}
         </button>
       </form>
     </div>

@@ -67,7 +67,8 @@ export default {
   		backgroundImage: {
   			'hero': "url('./assets/hero-icon-img.jpg')",
   			'divider': "url('./assets/fundo/espectro_raman_separador.svg')",
-  			'spectrum-gradient': 'linear-gradient(to right, #0000FF, #FF0000)'
+  			'spectrum-gradient': 'linear-gradient(to right, #0000FF, #FF0000)',
+				'teambg': "url('https://www.fisicanuclear.com.br/wp-content/uploads/2020/12/UFMG-predio.png')",
   		},
   		boxShadow: {
   			spectrum: '0 4px 15px rgba(0, 0, 0, 0.25)'

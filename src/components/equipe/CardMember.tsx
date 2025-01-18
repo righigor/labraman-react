@@ -5,6 +5,7 @@ import { File, Mail, Microscope, Phone } from "lucide-react";
 import useAnimationScroll from "@/hooks/useAnimationScroll";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useCorrectLanguage } from "@/hooks/useCorrectLanguage";
 
 interface CardMemberProps {
   member: Equipe;
@@ -13,13 +14,14 @@ interface CardMemberProps {
 
 export default function CardMember({ member, index }: CardMemberProps) {
   const isVisible = useAnimationScroll({
-    selector: "#CardMember",
+    selector: '#CardsMember',
     threshold: 0.3,
   });
   const [isExpanded, setIsExpanded] = useState(false);
   const [isClamped, setIsClamped] = useState(false);
   const bioRef = useRef<HTMLParagraphElement>(null);
   const { t } = useTranslation();
+  const getCorrectLanguage = useCorrectLanguage();
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
@@ -35,31 +37,38 @@ export default function CardMember({ member, index }: CardMemberProps) {
   return (
     <motion.div
       layout="preserve-aspect"
-      id="CardMember"
+      id="CardsMember"
       initial={{ opacity: 0, y: 100 + index * 25 }}
       animate={
         isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 * (index * 25) }
       }
       transition={{ duration: 1 + index * 0.5 }}
       key={member.nome}
-      className="bg-backgroundLight rounded-lg p-4 flex flex-col lg:flex-row gap-8 shadow-white shadow-sm text-textDark overflow-hidden"
+      className="bg-backgroundLight rounded-lg p-4 flex flex-col gap-4 shadow-white shadow-sm text-textDark overflow-hidden"
     >
-      <img
-        src={member.photo ? member.photo : ftPerfil}
-        alt={member.nome}
-        className="w-32 h-32 object-cover rounded-full"
-      />
-      <div className="flex flex-col gap-4 align-top justify-start items-start">
+      <div className="flex gap-4">
+        <img
+          src={member.photo?.url ? `http://localhost:1337${member.photo.url}` : ftPerfil}
+          alt={member.nome}
+          className="w-36 h-48 object-cover rounded-lg"
+          loading="lazy"
+        />
         <div>
           <h3 className="text-2xl font-title font-bold">{member.nome}</h3>
-          <p className=" text-md">{member.tituloCargo}</p>
+          <p className=" text-md">
+            {getCorrectLanguage(member.tituloCargo, member.tituloCargoEN)}
+          </p>
           {member.areaAtuacao && (
             <div className="mt-4">
               <p className="font-semibold">{t("area_atuacao")}:</p>
-              <p className="text-sm">{member.areaAtuacao}</p>
+              <p className="text-sm">
+                {getCorrectLanguage(member.areaAtuacao, member.areaAtuacaoEN)}
+              </p>
             </div>
           )}
         </div>
+      </div>
+      <div className="flex flex-col gap-4 align-top justify-start items-start">
         <div>
           <p
             ref={bioRef}
@@ -67,7 +76,7 @@ export default function CardMember({ member, index }: CardMemberProps) {
               isExpanded ? "" : "line-clamp-6"
             }`}
           >
-            {member.bio}
+            {getCorrectLanguage(member.bio, member.bioEN)}
           </p>
           {isClamped && (
             <div className="flex justify-end text-sm">
@@ -75,11 +84,19 @@ export default function CardMember({ member, index }: CardMemberProps) {
                 onClick={toggleExpand}
                 className="mt-1 text-blue-600 hover:underline focus:outline-none"
               >
-                {isExpanded ? "Mostrar menos" : "Expandir"}
+                {isExpanded ? t("mostrar_menos") : t("expandir")}
               </button>
             </div>
           )}
         </div>
+        {/* {member.pesquisaAtual && member.pesquisaAtualEN && (
+          <div>
+            <p className="font-semibold">{t("pesquisa_atual")}:</p>
+            <p className="text-sm">
+              {getCorrectLanguage(member.pesquisaAtual, member.pesquisaAtualEN)}
+            </p>
+          </div>
+        )} */}
         <div className="flex gap-2 justify-center w-full ">
           {member.lattes && (
             <a
@@ -105,12 +122,6 @@ export default function CardMember({ member, index }: CardMemberProps) {
             </a>
           )}
         </div>
-        {member.pesquisaAtual && (
-          <div>
-            <p className="font-semibold">Pesquisa Atual:</p>
-            <p className="text-sm">{member.pesquisaAtual}</p>
-          </div>
-        )}
 
         {member.telefone && (
           <div className="flex gap-1 items-center">

@@ -40,6 +40,9 @@ i18n
           "estudantes": "Estudantes",
           "professores_convidados": "Professores Convidados",
           "area_atuacao": "Área de Atuação",
+          "expandir": "Expandir",
+          "mostrar_menos": "Mostrar Menos",
+          "pesquisa_atual": "Pesquisa Atual",
         }
       },
       en: {
@@ -75,6 +78,9 @@ i18n
           "estudantes": "Students",
           "professores_convidados": "Guest Professors",
           "area_atuacao": "Field of Study",
+          "expandir": "Expand",
+          "mostrar_menos": "Show Less",
+          "pesquisa_atual": "Current Research",
         }
       },
     },

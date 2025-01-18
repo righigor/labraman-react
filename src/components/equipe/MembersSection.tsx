@@ -14,7 +14,7 @@ export default function MembersSection({
   const { t } = useTranslation();
   return (
     <section className="w-full p-4 flex flex-col items-center">
-      <h2 className="text-2xl md:text-3xl font-title text-center mb-8 relative inline-block">
+      <h2 className="text-2xl md:text-4xl font-title text-center mb-8 relative inline-block">
         {title}
         <span className="absolute left-1/2 -bottom-2 transform -translate-x-1/2 h-1 w-16 bg-gradient-to-r from-blue-500 to-red-500 rounded"></span>
       </h2>
@@ -23,7 +23,7 @@ export default function MembersSection({
           <CardMember key={member.nome} member={member} index={i} />
         ))}
       </div>
-      {title !== t("estudantes") && <hr className=" mt-10 w-3/4" />}
+      {title !== t("estudantes") && <hr className=" mt-10 border-backgroundLight/40 w-[90%]" />}
     </section>
   );
 }
