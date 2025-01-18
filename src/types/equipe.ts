@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Media } from "./media";
+
 export interface Equipe {
   id?: number;
   documentId?: string;
@@ -17,40 +18,14 @@ export interface Equipe {
   telefone?: string;
   cargo: "professor" | "professor_convidado" | "estudante";
   nivelEstudo?: "graduação" | "mestrado" | "doutorado";
-  email?: string[];
+  email?: Email[];
   lattes?: string;
   orcid?: string;
 };
 
-export interface Media {
+export interface Email {
   id: number;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  width: number;
-  height: number;
-  formats: { thumbnail: MediaFormat; small: MediaFormat; medium: MediaFormat; large: MediaFormat; };
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl: string;
-  provider: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export interface MediaFormat {
-  name: string;
-  hash: string;
-  ext: string;
-  mime: string;
-  width: number;
-  height: number;
-  size: number;
-  path: string;
-  url: string;
+  email: string;
 }
 
 export interface FetchEquipesResponse {

@@ -6,6 +6,7 @@ import useAnimationScroll from "@/hooks/useAnimationScroll";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useCorrectLanguage } from "@/hooks/useCorrectLanguage";
+import { API_URL } from "@/utils/constants";
 
 interface CardMemberProps {
   member: Equipe;
@@ -48,7 +49,7 @@ export default function CardMember({ member, index }: CardMemberProps) {
     >
       <div className="flex gap-4">
         <img
-          src={member.photo?.url ? `http://localhost:1337${member.photo.url}` : ftPerfil}
+          src={member.photo?.url ? `${API_URL}${member.photo.url}` : ftPerfil}
           alt={member.nome}
           className="w-36 h-48 object-cover rounded-lg"
           loading="lazy"
@@ -136,7 +137,7 @@ export default function CardMember({ member, index }: CardMemberProps) {
               <div className="flex gap-1 items-center" key={i}>
                 <Mail size={16} />
                 <a href={`mailto:${email}`} className="text-sm">
-                  {email}
+                  {email.email}
                 </a>
               </div>
             ))}

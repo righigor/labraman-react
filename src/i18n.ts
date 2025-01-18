@@ -43,6 +43,7 @@ i18n
           "expandir": "Expandir",
           "mostrar_menos": "Mostrar Menos",
           "pesquisa_atual": "Pesquisa Atual",
+          "link_artigo": "Link do Artigo",
         }
       },
       en: {
@@ -81,6 +82,7 @@ i18n
           "expandir": "Expand",
           "mostrar_menos": "Show Less",
           "pesquisa_atual": "Current Research",
+          "link_artigo": "Article Link",
         }
       },
     },

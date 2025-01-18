@@ -5,6 +5,7 @@ import Layout from "./components/layout/Layout";
 import NotFound from "./pages/not-found/NotFound";
 import EquipePage from "./pages/equipe/EquipePage";
 import { ScrollToTop } from "./utils/scrollToTop";
+import ArtigosPage from "./pages/artigos/ArtigosPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="nossa-historia" element={<HistoriaPage />} />
           <Route path="/equipe" element={<EquipePage />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/artigos" element={<ArtigosPage />} />
         </Routes>
         
       </Layout>
